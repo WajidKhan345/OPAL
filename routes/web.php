@@ -19,8 +19,9 @@ use App\Http\Controllers\UserController;
 // Route::get('/register',function(){
 //      return view('form');
 // });
-Route::get('/',[UserController::class, 'index']);
-Route::get('/register',[UserController::class, 'create']);
+Route::get('/',[UserController::class, 'index'])->name('users.index');
+Route::get('/register',[UserController::class, 'create'])->name('register');
+Route::get('/show/{id}',[UserController::class, 'show'])->name('users.show');
 
 
 Route::post('/store',[UserController::class, 'store'])->name('store');

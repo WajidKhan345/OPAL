@@ -27,4 +27,9 @@ class UserController extends Controller
         return back()->with('success', 'Record saved successfully!');
 
     }
+
+    public function show($id) {
+        $user = User::where('id', $id)->firstOrFail();
+        return view('show', compact('user'));
+    }
 }
